@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     glutInitWindowSize(512, 512);
     glutInitContextVersion(4, 3);
-    glutInitConteextProfile(GLUT_CORE_PROFILE);
+    glutInitContextProfile(GLUT_CORE_PROFILE);
     glutCreateWindow(argv[0]);
 
     if (glewInit()) {
@@ -69,6 +69,6 @@ int main(int argc, char** argv) {
     glutDisplayFunc(display);
 
     glutMainLoop();
-    
+
     return 0;
 }

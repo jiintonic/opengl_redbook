@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.0)
 project(opengl_redbook)
 
 # Add a local directory for custom CMake modules
-# set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 
 # Bump up warning levels appropriately for clang, gcc & msvc
 # Also set debug/optimization flags depending on the build type. IDE users choose this when
@@ -21,7 +21,10 @@ elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
     endif()
 endif()
 
-find_package(foo REQUIRED)
+find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
+find_package(GLUT REQUIRED)
+find_package(GLM REQUIRED)
 
 # message is great for printing variables when debugging
 # message(STATUS "FOO_LIBRARY...... ${FOO_LIBRARY}")
